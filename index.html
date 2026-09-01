@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#0b1020"><meta name="description" content="A polished Rock Paper Scissors game with AI, streaks, achievements, stats, themes and multiple modes.">
+<title>RPS Arena — Rock Paper Scissors</title><link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app-shell">
+<header class="topbar"><a class="brand" href="#">RPS <span>ARENA</span></a><div class="top-actions"><button id="soundBtn" class="icon-btn" title="Toggle sound">🔊</button><button id="themeBtn" class="icon-btn" title="Toggle theme">☀️</button></div></header>
+<main>
+<section class="hero"><div><p class="eyebrow">⚡ INSTANT • FAIR • ADDICTIVE</p><h1>Rock Paper <span>Scissors.</span></h1><p class="subtitle">Outsmart the AI. Build your streak. Become the arena champion.</p></div></section>
+<section class="controls glass"><div class="control"><label for="mode">MODE</label><select id="mode"><option value="classic">Classic</option><option value="adaptive">Adaptive AI</option><option value="chaos">Chaos</option></select></div><div class="control"><label for="difficulty">AI DIFFICULTY</label><select id="difficulty"><option value="easy">Easy</option><option value="normal" selected>Normal</option><option value="hard">Hard</option><option value="master">Master</option></select></div><div class="control"><label for="target">MATCH</label><select id="target"><option value="3">Best of 3</option><option value="5" selected>Best of 5</option><option value="7">Best of 7</option><option value="10">Best of 10</option></select></div><button id="newMatch" class="secondary">↻ New Match</button></section>
+<section class="scoreboard glass"><div class="score-card"><span class="player-label">YOU</span><strong id="playerScore">0</strong><small id="playerStreak">0 win streak</small></div><div class="versus"><span id="roundLabel">ROUND 1</span><b>VS</b><span id="status">MAKE YOUR MOVE</span></div><div class="score-card"><span class="player-label ai">AI</span><strong id="aiScore">0</strong><small id="aiStreak">0 win streak</small></div></section>
+<section class="arena"><div class="fighter glass"><div class="fighter-head"><span>YOU</span><span class="online-dot">● READY</span></div><div id="playerChoice" class="choice-display">?</div><p id="playerName">Choose your weapon</p></div><div class="battle"> <div class="pulse"></div><span id="battleText">READY?</span></div><div class="fighter glass"><div class="fighter-head"><span>AI</span><span class="online-dot">● ONLINE</span></div><div id="aiChoice" class="choice-display">?</div><p id="aiName">Waiting for you...</p></div></section>
+<section class="moves"><h2>Choose your move</h2><div class="move-grid"><button class="move" data-move="rock"><span>🪨</span><b>Rock</b><small>Crushes Scissors</small></button><button class="move" data-move="paper"><span>📄</span><b>Paper</b><small>Covers Rock</small></button><button class="move" data-move="scissors"><span>✂️</span><b>Scissors</b><small>Cuts Paper</small></button></div><p class="hint">Keyboard: <kbd>R</kbd> Rock · <kbd>P</kbd> Paper · <kbd>S</kbd> Scissors</p></section>
+<section class="dashboard"><div class="panel glass"><div class="panel-title"><h2>📊 Match Stats</h2><button id="resetStats" class="text-btn">Reset</button></div><div class="stats"><div><span>Total rounds</span><b id="totalRounds">0</b></div><div><span>Win rate</span><b id="winRate">0%</b></div><div><span>Best streak</span><b id="bestStreak">0</b></div><div><span>Perfect wins</span><b id="perfectWins">0</b></div></div></div><div class="panel glass"><div class="panel-title"><h2>🏆 Achievements</h2></div><div id="achievements" class="achievements"></div></div></section>
+<section class="panel glass history-panel"><div class="panel-title"><h2>📜 Recent Rounds</h2><button id="clearHistory" class="text-btn">Clear</button></div><div id="history" class="history"><p class="empty">Your battle history will appear here.</p></div></section>
+</main><footer>RPS ARENA · Built for the web · <span id="year"></span></footer></div>
+<div id="toast" class="toast"></div><script src="script.js"></script>
+</body></html>
